@@ -1,5 +1,5 @@
 category: Audio
-requires: cygwin libaudiofile0 libavcodec52 libavformat52 libavutil49 libcurl4 libfaad2 libFLAC8 libgetaddrinfo0 libglib2.0_0 libid3tag0 libmad0 libmikmod2 libmp3lame0 libmpcdec5 libogg0 libsamplerate0 libshout3 libvorbis0 libvorbisenc2 libvorbisfile3 libwavpack1
+requires: libaudiofile0 libavcodec52 libavformat52 libavutil49 libcurl4 libfaad2 libFLAC8 libgetaddrinfo0 libglib2.0_0 libid3tag0 libmad0 libmikmod2 libmp3lame0 libmpcdec5 libogg0 libsamplerate0 libshout3 libvorbis0 libvorbisenc2 libvorbisfile3 libwavpack1
 sdesc: "Music Player Daemon"
 ldesc: "A daemon for playing music of various formats. Music is played 
 through the server's audio device. The daemon stores info about all 
