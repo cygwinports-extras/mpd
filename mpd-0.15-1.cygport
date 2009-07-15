@@ -1,0 +1,58 @@
+DESCRIPTION="Music Player Daemon"
+HOMEPAGE="http://mpd.wikia.com/"
+SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
+
+# modplug: appears to be preferred; only one MOD decoder can be enabled
+# struct ucred: requires SO_PASSCRED, which is missing
+CYGCONF_ARGS="
+	--disable-debug
+	--disable-gprof
+	--disable-werror
+
+	--enable-ipv6
+	--enable-tcp
+	--enable-un
+	--without-zeroconf
+
+	--enable-sqlite
+
+	--enable-curl
+	--enable-lastfm
+	--enable-mms
+
+	--enable-bzip2
+	--enable-iso9660
+	--enable-zip
+
+	--enable-aac
+	--enable-audiofile
+	--enable-cue
+	--enable-ffmpeg
+	--enable-flac
+	--enable-id3
+	--enable-lame-encoder
+	--enable-lsr
+	--enable-mad
+	--enable-modplug --disable-mikmod
+	--enable-mpc
+	--enable-oggflac
+	--enable-shout
+	--enable-shout
+	--disable-sidplay
+	--enable-vorbis
+	--enable-vorbis-encoder
+	--enable-wavpack
+	--enable-wildmidi
+
+	--disable-alsa
+	--disable-ao
+	--enable-fifo
+	--enable-httpd-output
+	--disable-jack
+	--disable-mvp
+	--enable-oss
+	--enable-pipe-output
+	--disable-pulse
+
+	mpd_cv_have_struct_ucred=no
+"
