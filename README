@@ -59,15 +59,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack mpd-0.15-X-src.tar.bz2
+  unpack mpd-0.15.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./mpd-0.15-X.cygport all
+  cygport ./mpd-0.15.1-X.cygport all
 
 This will create:
-  /usr/src/mpd-0.15-X-src.tar.bz2
-  /usr/src/mpd-0.15-X.tar.bz2
+  /usr/src/mpd-0.15.1-X-src.tar.bz2
+  /usr/src/mpd-0.15.1-X.tar.bz2
 
 -------------------------------------------
 
@@ -87,7 +87,7 @@ Files included in the binary package:
 
 Port Notes:
 
------ version 0.15-1 -----
+----- version 0.15.1-1 -----
 Initial release for Cygwin 1.7.
 
 
