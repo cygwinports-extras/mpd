@@ -7,34 +7,34 @@ control, info retrieval, and playlist management can all be managed
 remotely.
 
 Runtime requirements:
-  cygwin-1.7.0-60
+  cygwin-1.7.1-1
   libaudiofile0-0.2.6-10
-  libavcodec52-0.5-1
-  libavformat52-0.5-1
-  libavutil49-0.5-1
+  libavcodec52-20100207-1
+  libavformat52-20100207-1
+  libavutil50-20100207-1
   libbz2_1-1.0.5-10
-  libcdio10-0.81-10
+  libcdio12-0.82-1
   libcue1-1.3.0-1
   libcurl4-7.19.6-1
   libfaad2-2.7-10
   libFLAC8-1.2.1-2
-  libgcc1-4.3.2-2
-  libglib2.0_0-2.20.4-1
+  libgcc1-4.3.4-3
+  libglib2.0_0-2.22.4-2
   libid3tag0-0.15.1b-10
-  libiso9660_7-0.81-10
+  libiso9660_7-0.82-1
   libmad0-0.15.1b-10
-  libmms0-0.4-10
+  libmms0-0.5-1
   libmodplug0-0.8.7-1
   libmp3lame0-3.98.2-10
-  libmpcdec5-1.2.6-10
-  libogg0-1.1.3-1
+  libmpcdec7-453-1
+  libogg0-1.1.4-1
   libsamplerate0-0.1.7-10
   libshout3-2.2.2-10
-  libsqlite3_0-3.6.11-1
-  libvorbis0-1.2.0-2
-  libvorbisenc2-1.2.0-2
-  libvorbisfile3-1.2.0-2
-  libwavpack1-4.50.1-10
+  libsqlite3_0-3.6.21-3
+  libvorbis0-1.2.3-1
+  libvorbisenc2-1.2.3-1
+  libvorbisfile3-1.2.3-1
+  libwavpack1-4.60.1-1
   libWildMidi0-0.2.2-10
   libzzip0.13-0.13.56-1
 

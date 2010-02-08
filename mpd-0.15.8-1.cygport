@@ -37,7 +37,6 @@ CYGCONF_ARGS="
 	--enable-mpc
 	--enable-oggflac
 	--enable-shout
-	--enable-shout
 	--disable-sidplay
 	--enable-vorbis
 	--enable-vorbis-encoder
