@@ -1,0 +1,11 @@
+--- origsrc/mpd-0.16.3/configure.ac	2011-06-04 09:36:36.000000000 -0500
++++ src/mpd-0.16.3/configure.ac	2011-07-03 06:17:49.528578200 -0500
+@@ -442,7 +442,7 @@ if test x$enable_tcp = xyes; then
+ fi
+ 
+ case "$host_os" in
+-mingw* | windows* | cygwin*)
++mingw* | windows*)
+ 	enable_un=no
+ 	;;
+ esac
