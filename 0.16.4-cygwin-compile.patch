@@ -1,0 +1,15 @@
+audiofile_decoder_plugin.c: In function ‘audiofile_file_seek’:
+audiofile_decoder_plugin.c:92:30: error: ‘SEEK_CUR’ undeclared (first use in this function)
+audiofile_decoder_plugin.c:92:30: note: each undeclared identifier is reported only once for each function it appears in
+audiofile_decoder_plugin.c:92:41: error: ‘SEEK_SET’ undeclared (first use in this function)
+
+--- origsrc/mpd-0.16.4/src/decoder/audiofile_decoder_plugin.c	2011-09-01 19:54:46.000000000 -0500
++++ src/mpd-0.16.4/src/decoder/audiofile_decoder_plugin.c	2011-09-27 02:10:45.996851800 -0500
+@@ -25,6 +25,7 @@
+ #include <af_vfs.h>
+ #include <assert.h>
+ #include <glib.h>
++#include <stdio.h>
+ 
+ #undef G_LOG_DOMAIN
+ #define G_LOG_DOMAIN "audiofile"
