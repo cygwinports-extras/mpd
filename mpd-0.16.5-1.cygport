@@ -1,8 +1,7 @@
 DESCRIPTION="Music Player Daemon"
 HOMEPAGE="http://mpd.wikia.com/"
 SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
-PATCH_URI="0.16.3-cygwin-un.patch
-           0.16.4-cygwin-compile.patch"
+PATCH_URI="0.16.3-cygwin-un.patch"
 
 # modplug: appears to be preferred; only one MOD decoder can be enabled
 # struct ucred: requires SO_PASSCRED, which is missing
@@ -60,7 +59,7 @@ CYGCONF_ARGS="
 	--enable-openal
 	--enable-oss
 	--enable-pipe-output
-	--disable-pulse
+	--enable-pulse
 
 	GME_CFLAGS=-I/usr/include/gme GME_LIBS=-lgme
 	mpd_cv_have_struct_ucred=no
