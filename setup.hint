@@ -1,5 +1,5 @@
 category: Audio
-requires: libao4 libaudiofile0 libavcodec53 libavformat53 libavutil51 libbz2_1 libcdio13 libcue1 libcurl4 libdns_sd1 libfaad2 libFLAC8 libgcc1 libglib2.0_0 libgme0 libid3tag0 libiso9660_8 libmad0 libmms0 libmodplug1 libmp3lame0 libmpcdec7 libmpg123_0 libogg0 libopenal1 libpulse0 libsamplerate0 libshout3 libsndfile1 libsqlite3_0 libtwolame0 libvorbis0 libvorbisenc2 libvorbisfile3 libwavpack1 libWildMidi1 libwrap0 libzzip0.13
+requires: libao4 libaudiofile1 libavcodec53 libavformat53 libavutil51 libbz2_1 libcdio13 libcue1 libcurl4 libdns_sd1 libfaad2 libFLAC8 libgcc1 libglib2.0_0 libgme0 libid3tag0 libiso9660_8 libmad0 libmms0 libmodplug1 libmp3lame0 libmpcdec7 libmpg123_0 libogg0 libopenal1 libpulse0 libsamplerate0 libshout3 libsndfile1 libsqlite3_0 libtwolame0 libvorbis0 libvorbisenc2 libvorbisfile3 libwavpack1 libWildMidi1 libwrap0 libzzip0.13
 sdesc: "Music Player Daemon"
 ldesc: "A daemon for playing music of various formats. Music is played 
 through the server's audio device. The daemon stores info about all 
