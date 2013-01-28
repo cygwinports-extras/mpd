@@ -1,7 +1,17 @@
-DESCRIPTION="Music Player Daemon"
+NAME="mpd"
+VERSION=0.17.3
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="Music Player Daemon"
+DESCRIPTION="A daemon for playing music of various formats. Music is played
+through the server's audio device. The daemon stores info about all available
+music, and this info can be easily searched and retrieved. Player control, info
+retrieval, and playlist management can all be managed remotely."
 HOMEPAGE="http://mpd.wikia.com/"
 SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
 PATCH_URI="0.16.3-cygwin-un.patch"
+
+DIFF_EXCLUDES="doxygen.conf"
 
 # modplug: appears to be preferred; only one MOD decoder can be enabled
 # struct ucred: requires SO_PASSCRED, which is missing
