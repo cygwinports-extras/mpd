@@ -1,5 +1,5 @@
 NAME="mpd"
-VERSION=0.17.3
+VERSION=0.17.5
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
@@ -7,8 +7,8 @@ DESCRIPTION="A daemon for playing music of various formats. Music is played
 through the server's audio device. The daemon stores info about all available
 music, and this info can be easily searched and retrieved. Player control, info
 retrieval, and playlist management can all be managed remotely."
-HOMEPAGE="http://mpd.wikia.com/"
-SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
+HOMEPAGE="http://www.musicpd.org/"
+SRC_URI="http://www.musicpd.org/download/mpd/${VERSION%.*}/mpd-${VERSION}.tar.xz"
 PATCH_URI="0.16.3-cygwin-un.patch"
 
 DIFF_EXCLUDES="doxygen.conf"
