@@ -1,5 +1,5 @@
 NAME="mpd"
-VERSION=0.18.7
+VERSION=0.18.8
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
