@@ -1,5 +1,5 @@
 NAME="mpd"
-VERSION=0.18.8
+VERSION=0.18.23
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
@@ -9,7 +9,10 @@ music, and this info can be easily searched and retrieved. Player control, info
 retrieval, and playlist management can all be managed remotely."
 HOMEPAGE="http://www.musicpd.org/"
 SRC_URI="http://www.musicpd.org/download/mpd/${VERSION%.*}/mpd-${VERSION}.tar.xz"
-PATCH_URI="0.16.3-cygwin-un.patch"
+PATCH_URI="
+	0.16.3-cygwin-un.patch
+	0.18.23-cygwin-compile.patch
+"
 
 DIFF_EXCLUDES="doxygen.conf"
 

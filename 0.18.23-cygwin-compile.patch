@@ -1,0 +1,10 @@
+--- origsrc/mpd-0.18.23/src/decoder/GmeDecoderPlugin.cxx	2014-11-02 04:39:37.000000000 -0600
++++ src/mpd-0.18.23/src/decoder/GmeDecoderPlugin.cxx	2015-05-19 10:57:26.351784500 -0500
+@@ -30,6 +30,7 @@
+ 
+ #include <glib.h>
+ #include <assert.h>
++#include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
