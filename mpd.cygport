@@ -1,5 +1,5 @@
 NAME="mpd"
-VERSION=0.18.23
+VERSION=0.19.21
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
@@ -10,69 +10,89 @@ retrieval, and playlist management can all be managed remotely."
 HOMEPAGE="http://www.musicpd.org/"
 SRC_URI="http://www.musicpd.org/download/mpd/${VERSION%.*}/mpd-${VERSION}.tar.xz"
 PATCH_URI="
-	0.16.3-cygwin-un.patch
-	0.18.23-cygwin-compile.patch
+	0.19.19-sidplayfp.patch
+	0.19.19-winmm.patch
 "
+
+PKG_NAMES="mpd mpd-doc"
+mpd_DOCS="AUTHORS COPYING NEWS README doc/mpdconf.example"
+mpd_CONTENTS="
+	usr/bin/mpd.exe
+	usr/share/man/man1/mpd.1*
+	usr/share/man/man5/mpd.conf.5*
+"
+mpd_doc_CATEGORY="Doc"
+mpd_doc_CONTENTS="usr/share/doc/mpd/*/"
 
 DIFF_EXCLUDES="doxygen.conf"
 
+# src/thread/Name.h calls pthread_getname_np
+CPPFLAGS+=" -D_GNU_SOURCE"
 # modplug: appears to be preferred; only one MOD decoder can be enabled
 # struct ucred: requires SO_PASSCRED, which is missing
 CYGCONF_ARGS="
-	--disable-debug
-	--disable-gprof
-	--disable-werror
-
-	--enable-ipv6
-	--enable-tcp
-	--enable-un
-	--with-zeroconf=bonjour
-
-	--enable-sqlite
-
-	--enable-curl
-	--enable-lastfm
-	--enable-libwrap
-	--enable-mms
-
-	--enable-bzip2
-	--enable-iso9660
-	--enable-zzip
-
-	--enable-aac
+	--enable-database
+	--disable-libmpdclient
+	--enable-expat
+	--enable-upnp
+	--disable-adplug
+	--disable-alsa
+	--disable-roar
+	--enable-ao
 	--enable-audiofile
-	--enable-cue
-	--enable-ffmpeg
+	--enable-zlib
+	--enable-bzip2
+	--enable-cdio-paranoia
+	--enable-curl
+	--disable-smbclient
+	--enable-nfs
+	--disable-debug
+	--enable-documentation
+	--disable-ffmpeg
 	--enable-flac
+	--enable-fluidsynth
 	--enable-gme
 	--enable-id3
-	--enable-lame-encoder
+	--disable-inotify
+	--enable-iso9660
+	--disable-jack
+	--enable-soundcloud
+	--disable-lame-encoder
+	--enable-libwrap
 	--enable-lsr
+	--enable-soxr
 	--enable-mad
-	--enable-mpg123
-	--enable-modplug --disable-mikmod
+	--disable-mikmod
+	--disable-mms
+	--enable-modplug
 	--enable-mpc
-	--enable-oggflac
+	--enable-mpg123
+	--enable-openal
+	--enable-opus
+	--enable-oss
+	--enable-pipe-output
+	--enable-pulse
+	--enable-recorder-output
+	--enable-sidplay
+	--disable-shine-encoder
 	--enable-shout
-	--disable-sidplay
 	--enable-sndfile
-	--enable-twolame-encoder
+	--disable-solaris-output
+	--enable-sqlite
+	--disable-systemd-daemon
+	--disable-test
+	--disable-twolame-encoder
 	--enable-vorbis
 	--enable-vorbis-encoder
 	--enable-wave-encoder
 	--enable-wavpack
+	--disable-werror
 	--enable-wildmidi
-
-	--disable-alsa
-	--enable-ao
-	--enable-fifo
-	--enable-httpd-output
-	--disable-jack
-	--disable-mvp
-	--enable-openal
-	--enable-oss
-	--enable-pipe-output
-	--enable-pulse
+	--enable-zzip
+	--enable-neighbor-plugins
+	--disable-aac
+	--with-zeroconf=bonjour
+	--with-boost
 
 	GME_CFLAGS=-I/usr/include/gme GME_LIBS=-lgme
 	mpd_cv_have_struct_ucred=no

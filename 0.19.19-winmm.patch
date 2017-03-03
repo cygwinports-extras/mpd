@@ -1,0 +1,40 @@
+--- origsrc/mpd-0.19.19/configure.ac	2016-12-12 02:39:09.340876700 -0600
++++ src/mpd-0.19.19/configure.ac	2016-12-12 03:33:49.148589000 -0600
+@@ -73,6 +73,7 @@ AC_CANONICAL_HOST
+ host_is_unix=yes
+ host_is_linux=no
+ host_is_android=no
++host_is_cygwin=no
+ host_is_darwin=no
+ host_is_solaris=no
+ host_is_windows=no
+@@ -107,6 +108,10 @@ mingw32* | windows*)
+ 	host_is_unix=no
+ 	;;
+ 
++cygwin*)
++	host_is_cygwin=yes
++	;;
++
+ darwin*)
+ 	host_is_darwin=yes
+ 	;;
+@@ -1682,7 +1687,7 @@ AM_CONDITIONAL(ENABLE_SOLARIS_OUTPUT, te
+ 
+ dnl --------------------------------- WinMM ---------------------------------
+ 
+-if test "x$host_is_windows" = xyes; then
++if test "x$host_is_windows$host_is_cygwin" != xnono; then
+ 	AC_DEFINE(ENABLE_WINMM_OUTPUT, 1, [Define to enable WinMM support])
+ 	enable_winmm_output=yes
+ 	LIBS="$LIBS -lwinmm"
+--- origsrc/mpd-0.19.20/src/output/plugins/WinmmOutputPlugin.hxx	2016-07-29 03:01:52.000000000 -0500
++++ src/mpd-0.19.20/src/output/plugins/WinmmOutputPlugin.hxx	2017-01-29 16:30:46.163465900 -0600
+@@ -26,6 +26,7 @@
+ 
+ #include "Compiler.h"
+ 
++#define _WIN32_WINNT 0x0600
+ #include <windows.h>
+ #include <mmsystem.h>
+ 
