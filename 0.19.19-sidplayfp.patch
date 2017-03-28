@@ -1,14 +1,5 @@
 --- origsrc/mpd-0.19.19/configure.ac	2016-08-15 03:00:15.000000000 -0500
 +++ src/mpd-0.19.19/configure.ac	2016-11-16 22:12:23.008048300 -0600
-@@ -1334,7 +1334,7 @@ AM_CONDITIONAL(ENABLE_VORBIS_DECODER, te
- dnl --------------------------------- sidplay ---------------------------------
- if test x$enable_sidplay != xno; then
- 	dnl Check for libsidplayfp first
--	PKG_CHECK_MODULES([SIDPLAY], [libsidplayfp libsidutils],
-+	PKG_CHECK_MODULES([SIDPLAY], [libsidplayfp],
- 		[found_sidplayfp=yes],
- 		[found_sidplayfp=no])
- 	found_sidplay=$found_sidplayfp
 @@ -1358,10 +1358,11 @@ if test x$enable_sidplay != xno && test
  fi
  

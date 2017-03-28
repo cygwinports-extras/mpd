@@ -28,6 +28,24 @@
  	AC_DEFINE(ENABLE_WINMM_OUTPUT, 1, [Define to enable WinMM support])
  	enable_winmm_output=yes
  	LIBS="$LIBS -lwinmm"
+--- origsrc/mpd-0.20.5/src/output/plugins/WinmmOutputPlugin.cxx	2017-01-27 01:46:51.000000000 -0600
++++ src/mpd-0.20.5/src/output/plugins/WinmmOutputPlugin.cxx	2017-03-03 14:02:15.287734800 -0600
+@@ -18,7 +18,6 @@
+  */
+ 
+ #include "config.h"
+-#include "WinmmOutputPlugin.hxx"
+ #include "../OutputAPI.hxx"
+ #include "../Wrapper.hxx"
+ #include "pcm/PcmBuffer.hxx"
+@@ -27,6 +26,7 @@
+ #include "util/RuntimeError.hxx"
+ #include "util/Macros.hxx"
+ #include "util/StringCompare.hxx"
++#include "WinmmOutputPlugin.hxx"
+ 
+ #include <array>
+ 
 --- origsrc/mpd-0.19.20/src/output/plugins/WinmmOutputPlugin.hxx	2016-07-29 03:01:52.000000000 -0500
 +++ src/mpd-0.19.20/src/output/plugins/WinmmOutputPlugin.hxx	2017-01-29 16:30:46.163465900 -0600
 @@ -26,6 +26,7 @@

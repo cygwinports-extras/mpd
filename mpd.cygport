@@ -1,5 +1,5 @@
 NAME="mpd"
-VERSION=0.19.21
+VERSION=0.20.5
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
@@ -15,7 +15,7 @@ PATCH_URI="
 "
 
 PKG_NAMES="mpd mpd-doc"
-mpd_DOCS="AUTHORS COPYING NEWS README doc/mpdconf.example"
+mpd_DOCS="AUTHORS COPYING NEWS README.md doc/mpdconf.example"
 mpd_CONTENTS="
 	usr/bin/mpd.exe
 	usr/share/man/man1/mpd.1*
@@ -32,65 +32,79 @@ CPPFLAGS+=" -D_GNU_SOURCE"
 # struct ucred: requires SO_PASSCRED, which is missing
 CYGCONF_ARGS="
 	--enable-database
+	--enable-daemon
+	--disable-debug
+	--enable-documentation
+	--disable-inotify
+	--enable-soundcloud
+	--enable-libwrap
+	--disable-test
+	--disable-werror
+	--disable-systemd-daemon
+
+	--enable-httpd-output
+	--enable-pipe-output
+	--enable-recorder-output
+	--enable-shout
+	--disable-solaris-output
+
 	--disable-libmpdclient
 	--enable-expat
-	--enable-upnp
-	--disable-adplug
-	--disable-alsa
-	--disable-roar
-	--enable-ao
-	--enable-audiofile
-	--enable-zlib
-	--enable-bzip2
-	--enable-cdio-paranoia
+	--enable-id3
+	--enable-sqlite
+
+	--enable-lsr
+	--enable-soxr
+
 	--enable-curl
 	--disable-smbclient
 	--enable-nfs
-	--disable-debug
-	--enable-documentation
+	--enable-cdio-paranoia
+	--disable-mms
+
+	--enable-cue
+	--enable-neighbor-plugins
+	--enable-iso9660
+	--enable-zlib
+	--enable-bzip2
+	--enable-upnp
+	--enable-zzip
+
+	--disable-aac
+	--disable-adplug
+	--enable-audiofile
 	--disable-ffmpeg
 	--enable-flac
 	--enable-fluidsynth
 	--enable-gme
-	--enable-id3
-	--disable-inotify
-	--enable-iso9660
-	--disable-jack
-	--enable-soundcloud
-	--disable-lame-encoder
-	--enable-libwrap
-	--enable-lsr
-	--enable-soxr
 	--enable-mad
 	--disable-mikmod
-	--disable-mms
 	--enable-modplug
 	--enable-mpc
 	--enable-mpg123
-	--enable-openal
 	--enable-opus
-	--enable-oss
-	--enable-pipe-output
-	--enable-pulse
-	--enable-recorder-output
 	--enable-sidplay
-	--disable-shine-encoder
-	--enable-shout
 	--enable-sndfile
-	--disable-solaris-output
-	--enable-sqlite
-	--disable-systemd-daemon
-	--disable-test
-	--disable-twolame-encoder
 	--enable-vorbis
+	--enable-wavpack
+	--enable-wildmidi
+
+	--disable-lame-encoder
+	--disable-shine-encoder
+	--disable-twolame-encoder
 	--enable-vorbis-encoder
 	--enable-wave-encoder
-	--enable-wavpack
-	--disable-werror
-	--enable-wildmidi
-	--enable-zzip
-	--enable-neighbor-plugins
-	--disable-aac
+
+	--disable-alsa
+	--enable-ao
+	--disable-haiku
+	--disable-jack
+	--enable-openal
+	--enable-oss
+	--enable-pulse
+	--disable-roar
+	--disable-sndio
+
 	--with-zeroconf=bonjour
 	--with-boost
 
