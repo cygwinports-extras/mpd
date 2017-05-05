@@ -1,6 +1,6 @@
 NAME="mpd"
 VERSION=0.20.6
-RELEASE=1
+RELEASE=2
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
 DESCRIPTION="A daemon for playing music of various formats. Music is played
@@ -89,7 +89,7 @@ CYGCONF_ARGS="
 	--enable-wavpack
 	--enable-wildmidi
 
-	--disable-lame-encoder
+	--enable-lame-encoder
 	--disable-shine-encoder
 	--disable-twolame-encoder
 	--enable-vorbis-encoder
