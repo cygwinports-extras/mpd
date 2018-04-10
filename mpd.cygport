@@ -1,6 +1,6 @@
 NAME="mpd"
 VERSION=0.20.18
-RELEASE=1
+RELEASE=2
 CATEGORY="Audio"
 SUMMARY="Music Player Daemon"
 DESCRIPTION="A daemon for playing music of various formats. Music is played
